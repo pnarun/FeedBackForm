@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>trainer login</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename = 'css/trainer.css')}}">
+    <link rel="stylesheet" href={{ url_for('static', filename = 'css/bootstrap.min.css') }}>
+    <!-- <link rel="stylesheet" type="text/css" href="E:\Final_Flask\static\trainer.css"> -->
+  </head>
+  <body>
+    <form  method="POST" >
+      <div class="log">
+        <h1>Trainer Login</h1>
+        <div class="txt">
+          <label for="Trainee">Trainer Name:</label><br>
+          <select id="Trainee" name="Trainee" required>
+              <option value="Akshit">Akshit</option>
+              <option value="SaiKrishna">SaiKrishna</option>
+              <option value="Arun">Arun</option>
+              <option value="Abhishek">Abhishek</option>
+              <option value="Amogh">Amogh</option>
+          </select>
+        </div>
+        <div class="txt">
+          <label for="">Password:</label>
+          <input type="password" name="pass" value="" required>
+        </div>
+        <input class="btn" type="submit" name="submit" value="Sign In">
+        {% if error %}
+          <center>
+            <br>
+          <p class="errorclass"><b>Error : </b>{{error}}</p>  </center>
+        {% endif %}
+        <br><br>
+
+         <input  class="btn btn-danger btn-lg"type="submit" name="submit" onclick="window.location.href ='{{url_for('home')}}'" value="Back" style="width=50%">
+
+       </div>
+
+    </form>
+
+  </body>
+</html>

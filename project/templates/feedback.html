@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>My Project</title>
+    <!--<link rel="stylesheet" href={{url_for('static', filename = 'css/index.css' )}}>>-->
+    <style>
+     /* a:link, a:visited {
+  background-color:rgb(50, 168, 241);
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: justify;
+  text-decoration: none;
+  display: inline-block;
+}*/
+
+a:hover, a:active {
+  background-color: rgb(0, 170, 255);
+}
+      body {
+        background-image: url("/static/img/new.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+.center {
+  margin: auto;
+  width: 60%;
+  border: 3px solid gold;
+  padding: 10px;
+}
+h1
+{
+  outline-color:rgb(19, 21, 143);
+  font-size: 80px;
+}
+label:hover {
+  color: rgb(45, 11, 197);
+  background-color: aqua;
+}
+td:hover {
+  color: rgb(45, 11, 197);
+  background-color: aqua
+}
+li:hover {
+  color: rgb(45, 11, 197);
+  background-color: aqua
+}
+.container
+{
+  float: left;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+}
+.container td, .container th {
+  border: 3px solid rgb(24, 5, 5);
+  padding: 8px;
+}
+.container tr
+{background-color: #caf313;}
+
+.container tr:hover {background-color: rgb(127, 226, 28);}
+
+.container th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: left;
+  background-color: rgb(253, 9, 9);
+  color: white;
+}
+.container th
+{
+  font-size: 20px;
+}
+.right {
+  position: absolute;
+  right: 0px;
+  width: 260px;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+</style>
+
+  </head>
+  <body>
+
+    <h1><img src="/static/img/bulb.png" alt="Cinque Terre" width="250" height="200"><b> &nbsp &nbsp &nbsp &nbsp Feedback Form</b></h1>
+
+
+    <div class="container">
+
+       <br> <br> <br>
+        <table>
+            <tr>
+            <th>Trainer Details</th>
+          </tr>
+          <tr>
+            <td><a href="{{url_for('Akshit')}}">Akshit Rachure</a><br></td>
+      </tr>
+      <tr><td>
+        <a href="{{url_for('SaiKrishna')}}">Sai Krishna</a></td></tr>
+       <tr><td>
+       <a href="{{url_for('Amogh')}}" >Amogh J P</a></td></tr>
+       <tr><td>
+       <a href="{{url_for('Arun')}}">Arun P N</a></td></tr>
+       <tr><td>
+        <a href="{{url_for('Abhishek')}}">Abhishek B B</a></td></tr>
+
+    </table>
+    </div>
+    <div class="right">
+
+
+            <img src="/static/img/feedbackmatters.jpg" alt="Cinque Terre" width="250" height="200">
+    </div>
+
+    <h3><center>All fields are required</center></h3>
+    <div class="center">
+    <form method="POST">
+      <label for="name">Name  </label><br><br>
+      <input id="name" type="text" name="name" placeholder="Your Answer" required><br><br>
+      <label for="usn">USN  </label><br><br>
+      <input id="usn" type="text" name="usn" placeholder="Your Answer" required><br><br>
+      <label for="phn">Phone No  </label><br><br>
+      <input id="phn" type="text" name="phn" pattern="[6789]{1}[0-9]{9}" placeholder="Your Answer" required><br><br>
+      <label for="mail">Email ID  </label><br><br>
+      <input id="mail" type="email" name="mail" placeholder="Your Answer" required><br><br>
+      <label for="clg">College Name</label><br><br>
+      <select id="clg" name="clgname" required>
+        <option value="SIT">SIT</option>
+        <option value="BMS">BMS</option>
+        <option value="RV">RV</option>
+        <option value="NIE">NIE</option>
+        <option value="NMIT">NMIT</option>
+        <option value="Reva">Reva</option>
+      </select><br><br>
+      <label for="Trainee">Trainer Name</label><br><br>
+      <select id="Trainee" name="Trainee" required>
+        <option value="Akshit">Akshit</option>
+        <option value="Sai">Sai</option>
+        <option value="Arun">Arun</option>
+        <option value="Abhishek">Abhishek</option>
+        <option value="Amogh">Amogh</option>
+      </select><br><br>
+
+      <p>Course Name</p><br>
+      <ul>
+     <Li> <input id="Python with machine Learning" type="radio" name="rad" value="ML" required>Python with machine Learning</input><br><br></Li>
+     <li> <input id="IOT with machine Learning" type="radio" name="rad" value="IOT" required>IOT with machine Learning</input><br><br></li>
+    </ul>
+      <h4>Please rate the overall session ?</h4>
+      <table>
+        <thead>
+          <th></th>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+        </thead>
+        <tr>
+          <td>Bad</td>
+          <td><input id="1" type="radio" name="rad1" value="1" required></input></td>
+          <td><input id="2" type="radio" name="rad1" value="2" required></input></td>
+          <td><input id="3" type="radio" name="rad1" value="3" required></input></td>
+          <td><input id="4" type="radio" name="rad1" value="4" required></input></td>
+          <td><input id="5" type="radio" name="rad1" value="5" required></input></td>
+          <td>Excellent</td>
+        </tr>
+      </table>
+      <h4>How would you rate the Hands-On Activites in the Sessions ?</h4>
+      <table>
+        <thead>
+          <th></th>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+        </thead>
+        <tr>
+          <td>Bad</td>
+          <td><input id="1" type="radio" name="rad2" value="1" required></input></td>
+          <td><input id="2" type="radio" name="rad2" value="2" required></input></td>
+          <td><input id="3" type="radio" name="rad2" value="3" required></input></td>
+          <td><input id="4" type="radio" name="rad2" value="4" required></input></td>
+          <td><input id="5" type="radio" name="rad2" value="5" required></input></td>
+          <td>Excellent</td>
+        </tr>
+      </table>
+      <h4>How would you rate the pace of the Session ?</h4>
+      <ul>
+
+     <li>   <input id="Too fast" type="radio" name="rad3" value="Too fast" required>Too fast</input><br><br></li>
+    <li> <input id="Too slow" type="radio" name="rad3" value="Too slow" required>Too slow</input><br><br></li>
+    <li> <input id="Just Perfect" type="radio" name="rad3" value="Just Perfect" required>Just Perfect</input><br><br></li>
+    </ul>
+      <h4>How was the explanation by the Trainer ?</h4>
+      <table>
+        <thead>
+          <th></th>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+        </thead>
+        <tr>
+          <td>Very Poor</td>
+          <td><input id="1" type="radio" name="rad4" value="1" required></input></td>
+          <td><input id="2" type="radio" name="rad4" value="2" required></input></td>
+          <td><input id="3" type="radio" name="rad4" value="3" required></input></td>
+          <td><input id="4" type="radio" name="rad4" value="4" required></input></td>
+          <td><input id="5" type="radio" name="rad4" value="5" required></input></td>
+          <td>Excellent</td>
+        </tr>
+      </table>
+      <h4>How was the doubt clearing by the Trainer ?</h4>
+      <table>
+        <thead>
+          <th></th>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+        </thead>
+        <tr>
+          <td>Very Poor</td>
+          <td><input id="1" type="radio" name="rad5" value="1" required></input></td>
+          <td><input id="2" type="radio" name="rad5" value="2" required></input></td>
+          <td><input id="3" type="radio" name="rad5" value="3" required></input></td>
+          <td><input id="4" type="radio" name="rad5" value="4" required></input></td>
+          <td><input id="5" type="radio" name="rad5" value="5" required></input></td>
+          <td>Excellent</td>
+        </tr>
+      </table>
+      <h4>Any other feedback/question/comment/suggestions ?</h4>
+      <textarea name="tarea" rows="3" cols="80" placeholder="Your Answer" required></textarea><br><br>
+      <a href="{{url_for('thankyou')}}"><input type="submit" name="submit" value="Submit"></a>
+    </form>
+  </div>
+  </body>
+
+
+</html>

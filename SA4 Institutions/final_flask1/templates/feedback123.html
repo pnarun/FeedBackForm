@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>My Project</title>
+    <!-- <link rel="stylesheet" type="text/CSS"href="C:\Users\Amog\Desktop\project\amogh.css"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+    <style>
+      html {
+  font-family: "Lucida Sans", sans-serif;
+}
+
+a:hover, a:active {
+  background-color: rgb(0, 170, 255);
+}
+      body {
+        /* background-color: rgb(248, 251, 252); */
+        font-size: 20px;
+        /* background-color: blue; */
+        background-image: url("/static/img/white.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .center {
+  margin: auto;
+  width: 60%;
+  border: 3px solid gold;
+  box-shadow: #000000;
+  padding: 10px;
+}
+h1
+{
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  outline-color:rgb(19, 21, 143);
+  font-size: 80px;
+  text-shadow: 2px 2px 5px rgb(90, 248, 11);
+  text-shadow: 2px 4px 8px #000000;
+}
+label:hover {
+  color: rgb(45, 11, 197);
+  background-color: aqua;
+  border-radius: 10px;
+}
+td:hover {
+  color: rgb(45, 11, 197);
+  background-color: aqua;
+  border-radius: 10px;
+  padding-bottom: 8px;
+  padding-right: 12px;
+  padding-top: 5px;
+}
+li:hover {
+  color: rgb(45, 11, 197);
+  background-color: aqua;
+  border-radius: 20px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-top: 15px;
+  font-size: 20px;
+  margin: 2px;
+}
+
+
+.container tr:hover {background-color: rgb(214, 240, 188);}
+
+.container th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: left;
+  background-color: rgb(177, 241, 113);
+  color: rgb(206, 110, 110);
+}
+.left
+{
+  position: absolute;
+  left: 0px;
+  width: 260px;
+  padding: 10px;
+
+}
+/* body{
+  background-image: url(static/img/images.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+      </style>
+
+  </head>
+  <body>
+
+    <h1><b><center>Feedback Form</center> </b></h1>
+
+
+
+            <div class="container">
+              <center>
+                <h2>Trainer details</h2>
+                <!-- Button to Open the Modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" width="250px" height="300px">
+                  Akshit
+                </button>
+
+                <!-- The Modal -->
+                <div class="modal" id="myModal">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <center><h4 class="modal-title">Akshit Rachure</h4></center>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      </div>
+
+                      <!-- Modal body -->
+                      <div class="modal-body">
+                        <img src="{{url_for('static',filename='img/akki.jpg')}}" alt="akshit" width="250px" height="300px"><br><br>
+                        <p><b>Trainer Name </b>      : Rachure Akshit</p>
+                        <p><b>Trainer Age</b>        : 31 years</p>
+                        <p><b>Trainer Id</b>         : 1SAA101</p>
+                        <p><b>Trainer Experience</b> : 9 years</p>
+                        <p><b>Expert In</b>          : Machine Learning</p>
+                        
+
+                      </div>
+
+                      <!-- Modal footer -->
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- Button to Open the Modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">
+                  Arun
+                </button>
+
+                <!-- The Modal -->
+                <div class="modal" id="myModal1">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <center><h4 class="modal-title">Arun P N </h4></center>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      </div>
+
+                      <!-- Modal body -->
+                      <div class="modal-body">
+                        <img src="{{url_for('static',filename='img/arun.jpg')}}" alt="arun"  width="250px" height="300px"><br><br>
+                        <p>Trainer Name       : Arun P N</p>
+                        <p>Trainer Age        : 34 years</p>
+                        <p>Trainer Id         : 1SAA102</p>
+                        <p>Trainer Experience : 11 years</p>
+                        <p>Expert In          : Web development</p>
+
+
+                      </div>
+
+
+                      <!-- Modal footer -->
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">
+                        Sai Krishna
+                    </button>
+
+                      <!-- The Modal -->
+                      <div class="modal" id="myModal2">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                              <center><h4 class="modal-title">Sai Krishna</h4></center>
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                              <img src="{{url_for('static',filename='img/sai1.jpg')}}" alt="SaiKrishna" width="250px" height="300px"><br><br>
+                              <p>Trainer Name       : Sai Krishna E L</p>
+                              <p>Trainer Age        : 29 years</p>
+                              <p>Trainer Id         : 1SAA103</p>
+                              <p>Trainer Experience : 7 years</p>
+                              <p>Expert In          : Android development</p>
+
+
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal3">
+                              Abhishek
+                            </button>
+
+                            <!-- The Modal -->
+                            <div class="modal" id="myModal3">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+
+                                  <!-- Modal Header -->
+                                  <div class="modal-header">
+                                    <center><h4 class="modal-title">Abhishek B B </h4></center>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  </div>
+
+                                  <!-- Modal body -->
+                                  <div class="modal-body">
+                                    <img src="{{url_for('static',filename='img/abhi.jpg')}}" alt="abhi" width="250px" height="300px"><br><br>
+                                    <p>Trainer Name       : Abhishek B B</p>
+                                    <p>Trainer Age        : 37 years</p>
+                                    <p>Trainer Id         : 1SAA104</p>
+                                    <p>Trainer Experience : 13 years</p>
+                                    <p>Expert In          : IOT </p>
+
+
+                                  </div>
+
+                                  <!-- Modal footer -->
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+
+                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal4">
+                                    Amogh
+                                  </button>
+
+                                  <!-- The Modal -->
+                                  <div class="modal" id="myModal4">
+                                    <div class="modal-dialog">
+                                      <div class="modal-content">
+
+                                        <!-- Modal Header -->
+                                        <div class="modal-header">
+                                          <center><h4 class="modal-title">Amogh J P</h4></center>
+                                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+
+                                        <!-- Modal body -->
+                                        <div class="modal-body">
+                                          <img src="{{url_for('static',filename='img/Amogh.jpg')}}" alt="amogh" width="250px" height="300px"><br><br>
+                                          <p>Trainer Name         :   Amogh J P</p>
+                                          <p>Trainer Age          :   32 years</p>
+                                          <p>Trainer Id           :   1SAA105</p>
+                                          <p>Trainer Experience   :   10 years</p>
+                                          <p>Expert In            :  Graphic Design</p>
+
+
+                                        </div>
+
+                                        <!-- Modal footer -->
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                        </div>
+
+
+                    </div>
+                  </div>
+                </div>
+              </center>
+               </div>
+
+
+
+    <br>
+
+
+    <div class="center">
+    <form method="POST">
+        <h3><center>All fields are required*</center></h3>
+      <label for="name"><b>Name </b> </label><br>
+      <input id="name" type="text" name="name" placeholder="Your Answer" required><br><br>
+      <label for="usn"> <b> USN </b></label><br>
+      <input id="usn" type="text" name="usn" placeholder="Your Answer" required><br><br>
+      <label for="phn"> <b> Phone No </b> </label><br>
+      <input id="phn" type="text" name="phn" pattern="[6-9]{1}[0-9]{9}" placeholder="Your Answer" required><br><br>
+      <label for="mail"> <b> Email ID </b> </label><br>
+      <input id="mail" type="email" name="mail" placeholder="Your Answer" required><br><br>
+      <label for="clg"> <b>College Name</b> </label><br>
+      <select id="clg" name="clgname" required>
+        <option value="SIT">SIT</option>
+        <option value="BMS">BMS</option>
+        <option value="RV">RV</option>
+        <option value="NIE">NIE</option>
+        <option value="NMIT">NMIT</option>
+        <option value="Reva">Reva</option>
+      </select><br><br>
+      <label for="Trainee"> <b> Trainer Name</b></label><br>
+      <select id="Trainee" name="Trainee" required>
+        <option value="Akshit">Akshit</option>
+        <option value="SaiKrishna">SaiKrishna</option>
+        <option value="Arun">Arun</option>
+        <option value="Abhishek">Abhishek</option>
+        <option value="Amogh">Amogh</option>
+      </select><br> <br>
+
+      <p> <b> Course Name</b></p>
+      <ul>
+     <li> <input id="Python with machine Learning" type="radio" name="rad" value="Machine Learning" style="height:16px;width:16px;vertical-align:middle;"required>&nbsp;&nbsp;Python with machine Learning</input><br><br></Li>
+     <li> <input id="IOT with machine Learning" type="radio" name="rad" value="IOT" style="height:16px;width:16px;vertical-align:middle;"required>&nbsp;&nbsp;IOT with machine Learning</input><br><br></li>
+     <li> <input id="Graphic Design" type="radio" name="rad" value="Graphic Design" style="height:16px;width:16px;vertical-align:middle;"required>&nbsp;&nbsp;Graphic Design</input><br><br></li>
+     <li> <input id="Android development" type="radio" name="rad" value="Android development" style="height:16px;width:16px;vertical-align:middle;"required>&nbsp;&nbsp;Android development</input><br><br></li>
+     <li> <input id="Web development" type="radio" name="rad" value="Web development"style="height:16px;width:16px;vertical-align:middle;" required>&nbsp;&nbsp;Web development</input><br><br></li>
+    </ul>
+      <h4>Please rate the overall session ?</h4>
+      <table>
+        <thead>
+          <th></th>
+          <th>&nbsp;&nbsp;1</th>
+          <th>&nbsp;&nbsp;2</th>
+          <th>&nbsp;&nbsp;3</th>
+          <th>&nbsp;&nbsp;4</th>
+          <th>&nbsp;&nbsp;5</th>
+        </thead>
+        <tr>
+          <td>Bad&nbsp;&nbsp;</td>
+          <td>&nbsp;&nbsp;<input id="1" type="radio" name="rad1" value="1" style="height:16px;width:16px;vertical-align:middle;"required></input></td>
+          <td>&nbsp;&nbsp;<input id="2" type="radio" name="rad1" value="2" style="height:16px;width:16px;vertical-align:middle;"required></input></td>
+          <td>&nbsp;&nbsp;<input id="3" type="radio" name="rad1" value="3" style="height:16px;width:16px;vertical-align:middle;"required></input></td>
+          <td>&nbsp;&nbsp;<input id="4" type="radio" name="rad1" value="4" style="height:16px;width:16px;vertical-align:middle;"required></input></td>
+          <td>&nbsp;&nbsp;<input id="5" type="radio" name="rad1" value="5"style="height:16px;width:16px;vertical-align:middle;" required></input></td>
+          <td>&nbsp;&nbsp;Excellent</td>
+        </tr>
+      </table><br>
+      <h4>How would you rate the Hands-On Activites in the Sessions ?</h4>
+      <table>
+        <thead>
+          <th></th>
+          <th>&nbsp;&nbsp;1</th>
+          <th>&nbsp;&nbsp;2</th>
+          <th>&nbsp;&nbsp;3</th>
+          <th>&nbsp;&nbsp;4</th>
+          <th>&nbsp;&nbsp;5</th>
+        </thead>
+        <tr>
+          <td>Bad&nbsp;&nbsp;</td>
+          <td>&nbsp;&nbsp;<input id="1" type="radio" name="rad2" value="1" style="height:16px;width:16px;vertical-align:middle;"required></input></td>
+          <td>&nbsp;&nbsp;<input id="2" type="radio" name="rad2" value="2" style="height:16px;width:16px;vertical-align:middle;"required></input></td>
+          <td>&nbsp;&nbsp;<input id="3" type="radio" name="rad2" value="3" style="height:16px;width:16px;vertical-align:middle;"required></input></td>
+          <td>&nbsp;&nbsp;<input id="4" type="radio" name="rad2" value="4" style="height:16px;width:16px;vertical-align:middle;"required></input></td>
+          <td>&nbsp;&nbsp;<input id="5" type="radio" name="rad2" value="5" style="height:16px;width:16px;vertical-align:middle;"required></input></td>
+          <td>&nbsp;&nbsp;Excellent</td>
+        </tr>
+      </table><br>
+      <h4>How would you rate the pace of the Session ?</h4>
+      <ul>
+
+     <li>   <input id="Too fast" type="radio" name="rad3" value="Too fast" style="height:16px;width:16px;vertical-align:middle;"required>&nbsp;&nbsp;Too fast</input><br><br></li>
+    <li> <input id="Too slow" type="radio" name="rad3" value="Too slow" style="height:16px;width:16px;vertical-align:middle;"required>&nbsp;&nbsp;Too slow</input><br><br></li>
+    <li> <input id="Just Perfect" type="radio" name="rad3" value="Just Perfect" style="height:16px;width:16px;vertical-align:middle;"required>&nbsp;&nbsp;Just Perfect</input><br><br></li>
+    </ul>
+      <h4>How was the explanation by the Trainer ?</h4>
+      <table>
+        <thead>
+          <th></th>
+          <th>&nbsp;&nbsp;1</th>
+          <th>&nbsp;&nbsp;2</th>
+          <th>&nbsp;&nbsp;3</th>
+          <th>&nbsp;&nbsp;4</th>
+          <th>&nbsp;&nbsp;5</th>
+        </thead>
+        <tr>
+          <td>Very Poor&nbsp;&nbsp;</td>
+          <td>&nbsp;&nbsp;<input id="1" type="radio" name="rad4" value="1" style="height:16px;width:16px;vertical-align:middle;"required></input></td>
+          <td>&nbsp;&nbsp;<input id="2" type="radio" name="rad4" value="2" style="height:16px;width:16px;vertical-align:middle;"required></input></td>
+          <td>&nbsp;&nbsp;<input id="3" type="radio" name="rad4" value="3"style="height:16px;width:16px;vertical-align:middle;"style="height:16px;width:16px;vertical-align:middle;" required></input></td>
+          <td>&nbsp;&nbsp;<input id="4" type="radio" name="rad4" value="4"style="height:16px;width:16px;vertical-align:middle;" required></input></td>
+          <td>&nbsp;&nbsp;<input id="5" type="radio" name="rad4" value="5"style="height:16px;width:16px;vertical-align:middle;" required></input></td>
+          <td>&nbsp;&nbsp;Excellent</td>
+        </tr>
+      </table><br>
+      <h4>How was the doubt clearing by the Trainer ?</h4>
+      <table>
+        <thead>
+          <th></th>
+          <th>&nbsp;&nbsp;1</th>
+          <th>&nbsp;&nbsp;2</th>
+          <th>&nbsp;&nbsp;3</th>
+          <th>&nbsp;&nbsp;4</th>
+          <th>&nbsp;&nbsp;5</th>
+        </thead>
+        <tr>
+          <td>Very Poor&nbsp;&nbsp;</td>
+          <td>&nbsp;&nbsp;<input id="1" type="radio" name="rad5" value="1" style="height:16px;width:16px;vertical-align:middle;" required></input></td>
+          <td>&nbsp;&nbsp;<input id="2" type="radio" name="rad5" value="2"style="height:16px;width:16px;vertical-align:middle;" required></input></td>
+          <td>&nbsp;&nbsp;<input id="3" type="radio" name="rad5" value="3" style="height:16px;width:16px;vertical-align:middle;"required></input></td>
+          <td>&nbsp;&nbsp;<input id="4" type="radio" name="rad5" value="4" style="height:16px;width:16px;vertical-align:middle;"required></input></td>
+          <td>&nbsp;&nbsp;<input id="5" type="radio" name="rad5" value="5" style="height:16px;width:16px;vertical-align:middle;"required></input></td>
+          <td>&nbsp;&nbsp;Excellent</td>
+        </tr>
+      </table><br>
+      <h4>Any other feedback/question/comment/suggestions ?</h4>
+      <textarea name="tarea" rows="3" cols="80" placeholder="Your Answer" required></textarea><br><br>
+      <input type="submit" name="submit" value="Submit"></a>
+    </form>
+  </div>
+  <!--<p>Used on a button:</p>
+<button style="font-size:24px">Button <i class="fa fa-bar-chart"></i></button>-->
+
+  </body>
+
+
+</html>

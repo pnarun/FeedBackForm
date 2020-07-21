@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  {% block head %}
+  <meta charset="utf-8">
+  <title>{% block title %}viewers{% endblock %}</title>
+  <link rel="stylesheet" href={{url_for('static', filename = 'css/bootstrap.min.css' )}}>
+  <link rel="stylesheet" href={{url_for('static', filename = 'css/index.css' )}}>
+  {% endblock %}
+  <style media="screen">
+  a{
+    float: right;
+    padding-bottom:10px;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    {% block body %}
+    <h2 class = "jumbotron">Data</h2>
+
+    <table class = "table table-bordered table-sm">
+      <thead class = "thead-light">
+        <tr>
+          <th>USN</th>
+          <th>Name</th>
+          <th>Password</th>
+          <th>Timestamp</th>
+          <th>Update Data</th>
+          <th>Delete Data</th>
+        </tr>
+      </thead>
+      {% for data in data %}
+      <tr>
+        <td>{{data.ID}}</td>
+        <td>{{data.NAME}}</td>
+        <td>{{data.PASSWORD}}</td>
+        <td>{{data.Timestamp}}</td>
+        <td><a href = '/edit/{{data.ID}}' class="btn btn-primary">EDIT</a></td>
+        <td><a href = '/delete/{{data.ID}}' class="btn btn-danger">DEL</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+  <script src={{url_for('static', filename = 'js/jquery-3.3.1.min.js')}} charset="utf-8"></script>
+  <script src={{url_for('static', filename = 'js/bootstrap.min.js')}} charset="utf-8"></script>
+  {% endblock %}
+</body>
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Student-Trainer</title>
+    <style media="screen">
+
+      .table1{
+        float: left;
+        font-size: 33px;
+        box-shadow: 5px 5px;
+      }
+      body{
+        background-image: url(static/img/s_t3.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+      }
+
+      .table2{
+        float: right;
+        box-shadow: 5px 5px;
+        font-size: 23px;
+      }
+    h1{
+      font-size: 80px;
+      color:white;
+      text-shadow: 0 0 8px #FF0000, 0 0 10px #0000FF;
+    }
+      #nav {
+  /* background-color: 	#acf6bb; */
+  height: 48px;
+  font-size: 25px;
+  font-weight: bold;
+  font: Tahoma;
+  }
+  #nav ul {
+  list-style: none;
+  padding: 5px;
+  margin: 0px;
+  text-align: centre;
+float:right;
+  }
+  #nav li {
+  display: inline;
+  padding: 10px;
+  vertical-align: middle;
+  }
+  #nav button {
+  text-decoration: none;
+  padding: 8px 30px 8px 30px;
+  color:blue;
+  vertical-align: middle;
+  font-size: 25px;
+  text-shadow: 0 0 2px #FF0000, 0 0 3px #0000FF;
+  }
+  #nav button:hover {
+  background-color: 	#d1d2d1;
+  color: black;
+  box-shadow: 2px 5px;
+
+  }
+  .t1{
+    padding-left: 15%;
+    color: #EAF0F1;
+  }
+  .t2{
+    float: right;
+    padding-right: 15%;
+    color: #EAF0F1;
+    padding-bottom: 50px;
+  }
+  h2{
+    color: white;
+    font-size: 40px;
+    padding-bottom: 30px;
+    text-shadow: 0 0 8px #FF0000, 0 0 10px #0000FF;
+  }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <center>
+        <h1>SA4 INSTITUITIONS</h1>
+        </center>
+        <div id="nav">
+          <ul>
+            <li><button class="btn btn-success btn-lg" type ="button" onclick="window.location.href ='{{url_for('index')}}'">Student Portal</button></li>
+            <li><button class="btn btn-success btn-lg" type ="button" onclick="window.location.href ='{{url_for('trainer')}}'">Trainer Portal</button></li>
+          </ul>
+        </div><br><br>
+        <center>
+        <h2>DASH BOARD</h2>
+      </center>
+      <marquee align=left span class="socod" width="100%"><h2>Trainer Ratings!</h2></span></marquee>
+
+
+        <div class="t1">
+          <table class="table1" border="10px" >
+            <thead>
+              <th>No.of Students</th><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;30</td>
+              </thead>
+              <thead>
+                  <th>&nbsp;&nbsp;No.of trainers</th><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5</td>
+              </thead>
+              <thead>
+                  <th>&nbsp;&nbsp;No.of courses</th><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5</td>
+              </thead>
+            <thead>
+              <th>&nbsp;&nbsp;No.of responses</th><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data[1].count}}</td>
+            </thead>
+          </table>
+        </div>
+
+        <div class="t2">
+          <table class="table2" border="10px">
+            <thead id="tt1">
+              <th>Trainer</th>
+              <th>Positive</th>
+              <th>Negative</th>
+              <th>Rating</th>
+            </thead>
+            <thead>
+              <th>Akshit</th><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data[2].Akshit}}</td>  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data[3].Akshit}}</td>   <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data[1].Akshit}}</td>
+            </thead>
+            <thead>
+              <th>SaiKrishna</th> <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data[2].SaiKrishna}}</td>  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data[3].SaiKrishna}}</td>   <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data[1].SaiKrishna}}</td>
+            </thead>
+            <thead>
+              <th>Arun</th><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data[2].Arun}}</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data[3].Arun}}</td>   <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data[1].Arun}}</td>
+            </thead>
+            <thead>
+              <th>Abhishek</th><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data[2].Abhishek}}</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data[3].Abhishek}}</td>   <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data[1].Abhishek}}</td>
+            </thead>
+            <thead>
+              <th>Amogh</th> <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data[2].Amogh}}</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data[3].Amogh}}</td>   <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data[1].Amogh}}</td>
+            </thead>
+          </table>
+        </div>
+    </div>
+
+
+      <script>
+
+          function BarGraph(ctx) {
+
+      // Private properties and methods
+
+      var that = this;
+      var startArr;
+      var endArr;
+      var looping = false;
+
+      // Loop method adjusts the height of bar and redraws if neccessary
+      var loop = function () {
+
+        var delta;
+        var animationComplete = true;
+
+        // Boolean to prevent update function from looping if already looping
+        looping = true;
+
+        // For each bar
+        for (var i = 0; i < endArr.length; i += 1) {
+        // Change the current bar height toward its target height
+        delta = (endArr[i] - startArr[i]) / that.animationSteps;
+        that.curArr[i] += delta;
+        // If any change is made then flip a switch
+        if (delta) {
+          animationComplete = false;
+        }
+        }
+        // If no change was made to any bars then we are done
+        if (animationComplete) {
+        looping = false;
+        } else {
+        // Draw and call loop again
+        draw(that.curArr);
+        setTimeout(loop, that.animationInterval / that.animationSteps);
+        }
+      };
+
+      // Draw method updates the canvas with the current display
+      var draw = function (arr) {
+
+        var numOfBars = arr.length;
+        var barWidth;
+        var barHeight;
+        var border = 2;
+        var ratio;
+        var maxBarHeight;
+        var gradient;
+        var largestValue;
+        var graphAreaX = 0;
+        var graphAreaY = 0;
+        var graphAreaWidth = that.width;
+        var graphAreaHeight = that.height;
+        var i;
+
+        // Update the dimensions of the canvas only if they have changed
+        if (ctx.canvas.width !== that.width || ctx.canvas.height !== that.height) {
+        ctx.canvas.width = that.width;
+        ctx.canvas.height = that.height;
+        }
+
+        // Draw the background color
+        ctx.fillStyle = that.backgroundColor;
+        ctx.fillRect(0, 0, that.width, that.height);
+
+        // If x axis labels exist then make room
+        if (that.xAxisLabelArr.length) {
+        graphAreaHeight -= 40;
+        }
+
+        // Calculate dimensions of the bar
+        barWidth = graphAreaWidth / numOfBars - that.margin * 2;
+        maxBarHeight = graphAreaHeight - 25;
+
+        // Determine the largest value in the bar array
+        var largestValue = 0;
+        for (i = 0; i < arr.length; i += 1) {
+        if (arr[i] > largestValue) {
+          largestValue = arr[i];
+        }
+        }
+
+        // For each bar
+        for (i = 0; i < arr.length; i += 1) {
+        // Set the ratio of current bar compared to the maximum
+        if (that.maxValue) {
+          ratio = arr[i] / that.maxValue;
+        } else {
+          ratio = arr[i] / largestValue;
+        }
+
+        barHeight = ratio * maxBarHeight;
+
+        // Turn on shadow
+        ctx.shadowOffsetX = 2;
+        ctx.shadowOffsetY = 2;
+        ctx.shadowBlur = 2;
+        ctx.shadowColor = "#999";
+
+        // Draw bar background
+        ctx.fillStyle = "#333";
+        ctx.fillRect(that.margin + i * that.width / numOfBars,
+          graphAreaHeight - barHeight,
+          barWidth,
+          barHeight);
+
+        // Turn off shadow
+        ctx.shadowOffsetX = 0;
+        ctx.shadowOffsetY = 0;
+        ctx.shadowBlur = 0;
+
+        // Draw bar color if it is large enough to be visible
+        if (barHeight > border * 2) {
+          // Create gradient
+          gradient = ctx.createLinearGradient(0, 0, 0, graphAreaHeight);
+          gradient.addColorStop(1-ratio, that.colors[i % that.colors.length]);
+          gradient.addColorStop(1, "#ffffff");
+
+          ctx.fillStyle = gradient;
+          // Fill rectangle with gradient
+          ctx.fillRect(that.margin + i * that.width / numOfBars + border,
+            graphAreaHeight - barHeight + border,
+            barWidth - border * 2,
+            barHeight - border * 2);
+        }
+
+        // Write bar value
+        ctx.fillStyle = "#333";
+        ctx.font = "bold 12px sans-serif";
+        ctx.textAlign = "center";
+        // Use try / catch to stop IE 8 from going to error town
+        try {
+          ctx.fillText(parseInt(arr[i],10),
+          i * that.width / numOfBars + (that.width / numOfBars) / 2,
+          graphAreaHeight - barHeight - 10);
+        } catch (ex) {}
+        // Draw bar label if it exists
+        if (that.xAxisLabelArr[i]) {
+          // Use try / catch to stop IE 8 from going to error town
+          ctx.fillStyle = "#333";
+          ctx.font = "bold 12px sans-serif";
+          ctx.textAlign = "center";
+          try{
+          ctx.fillText(that.xAxisLabelArr[i],
+            i * that.width / numOfBars + (that.width / numOfBars) / 2,
+            that.height - 10);
+          } catch (ex) {}
+          }
+        }
+        };
+
+      // Public properties and methods
+
+      this.width = 300;
+      this.height = 150;
+      this.maxValue =5;
+      this.margin = 5;
+      this.colors = ["purple", "red", "green", "yellow"];
+      this.curArr = [];
+      this.backgroundColor = 'rgba(0,0,0,0.5)';
+      this.xAxisLabelArr = [];
+      this.yAxisLabelArr = [];
+      this.animationInterval = 100;
+      this.animationSteps = 10;
+
+      // Update method sets the end bar array and starts the animation
+      this.update = function (newArr) {
+
+        // If length of target and current array is different
+        if (that.curArr.length !== newArr.length) {
+        that.curArr = newArr;
+        draw(newArr);
+        } else {
+        // Set the starting array to the current array
+        startArr = that.curArr;
+        // Set the target array to the new array
+        endArr = newArr;
+        // Animate from the start array to the end array
+        if (!looping) {
+          loop();
+        }
+        }
+      };
+      }</script>
+
+  	<div id="graphDiv1"><canvas></canvas></div>
+  	<br>
+  	<div id="graphDiv2"><canvas width="450" height="150"></canvas></div>
+  	<!--[if IE]><script src="excanvas.js"></script><![endif]-->
+  	<script src="html5-canvas-bar-graph.js"></script>
+  	<script>(function () {
+
+  		function createCanvas(divName) {
+
+  			var div = document.getElementById(divName);
+  			var canvas = document.createElement('canvas');
+  			div.appendChild(canvas);
+  			if (typeof G_vmlCanvasManager != 'undefined') {
+  				canvas = G_vmlCanvasManager.initElement(canvas);
+  			}
+  			var ctx = canvas.getContext("2d");
+  			return ctx;
+  		}
+
+
+
+  		var ctx2 = createCanvas("graphDiv2");
+
+  		var graph2 = new BarGraph(ctx2);
+  		graph2.margin = 2;
+  		graph2.width = 450;
+  		graph2.height = 350;
+      graph2.xAxisLabelArr = ["Akshit", "Sai Krishna", "Arun", "Abhishek", "Amogh"];
+      // graph2.xAxisLabelArr.colors=['red','red'];
+  		setInterval(function () {
+  			graph2.update([{{data[1].Akshit}},{{data[1].SaiKrishna}},{{data[1].Arun}},{{data[1].Abhishek}},{{data[1].Amogh}}]);
+  		}, 1500);
+
+  	}());</script>
+
+
+  </body>
+</html>

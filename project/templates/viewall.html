@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  {% block head %}
+  <meta charset="utf-8">
+  <title>{% block title %}viewers{% endblock %}</title>
+  <link rel="stylesheet" href={{url_for('static', filename = 'css/bootstrap.min.css' )}}>
+  <link rel="stylesheet" href={{url_for('static', filename = 'css/index.css' )}}>
+  {% endblock %}
+  <style media="screen">
+  a{
+    float: right;
+    padding-bottom:10px;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    {% block body %}
+    <h2 class = "jumbotron">Data</h2>
+
+    <table class = "table table-bordered table-sm">
+      <thead class = "thead-light">
+        <tr>
+          <th>Name</th>
+          <th>USN</th>
+          <th>Phone Number</th>
+          <th>Email ID</th>
+          <th>College</th>
+          <th>Trainer</th>
+          <th>Course</th>
+          <th>Overall_Rate</th>
+          <th>Hands_On</th>
+          <th>Pace</th>
+          <th>Explanation</th>
+          <th>Doubt_clearing</th>
+          <th>Suggestions</th>
+        </tr>
+      </thead>
+      {% for data in data %}
+      <tr>
+        <td>{{data.Name}}</td>
+        <td>{{data.USN}}</td>
+        <td>{{data.Phn_no}}</td>
+        <td>{{data.Email}}</td>
+        <td>{{data.College}}</td>
+        <td>{{data.Trainer}}</td>
+        <td>{{data.Course}}</td>
+        <td>{{data.Overall_rate}}</td>
+        <td>{{data.Hands_On}}</td>
+        <td>{{data.Pace}}</td>
+        <td>{{data.Explanation}}</td>
+        <td>{{data.Doubt_clearing}}</td>
+        <td>{{data.Suggestion}}</td>
+      
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+  <script src={{url_for('static', filename = 'js/jquery-3.3.1.min.js')}} charset="utf-8"></script>
+  <script src={{url_for('static', filename = 'js/bootstrap.min.js')}} charset="utf-8"></script>
+  {% endblock %}
+</body>
+</html>

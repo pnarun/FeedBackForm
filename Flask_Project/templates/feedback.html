@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>My Project</title>
+    <link rel="stylesheet" href="feedback.css">
+  </head>
+  <body>
+    <h1><center>Feedback Form</center></h1>
+    <h3><center>All fields are required</center></h3>
+    <form id="classone" action="E:\Flask_Project\thankyou.html" method="post">
+      <label for="name">Name  </label><br><br>
+      <input id="name" type="text" name="name" placeholder="Your Answer" required><br><br>
+      <label for="usn">USN  </label><br><br>
+      <input id="usn" type="text" name="usn" placeholder="Your Answer" required><br><br>
+      <label for="phn">Phone No  </label><br><br>
+      <input id="phn" type="text" name="phn" placeholder="Your Answer" required><br><br>
+      <label for="mail">Email ID  </label><br><br>
+      <input id="mail" type="email" name="mail" placeholder="Your Answer" required><br><br>
+      <label for="clg">College Name</label><br><br>
+      <select id="clg" name="clgname" required>
+        <option value="1">SIT</option>
+        <option value="2">BMS</option>
+        <option value="3">RV</option>
+        <option value="4">NIE</option>
+        <option value="5">NMIT</option>
+        <option value="6">Reva</option>
+      </select><br><br>
+      <label for="Trainee">Trainer Name</label><br><br>
+      <select id="Trainee" name="Trainee" required>
+        <option value="1">Akshit</option>
+        <option value="2">Sai</option>
+        <option value="3">Arun</option>
+        <option value="4">Abhishek</option>
+        <option value="5">Amogh</option>
+      </select><br><br>
+      <p>Course Name</p><br>
+      <input id="Python with machine Learning" type="radio" name="rad" value="op1" required>Python with machine Learning</input><br><br>
+      <input id="IOT with machine Learning" type="radio" name="rad" value="op2" required>IOT with machine Learning</input><br><br>
+      <h4>Please rate the overall session ?</h4>
+      <table>
+        <thead>
+          <th></th>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+        </thead>
+        <tr>
+          <td>Bad</td>
+          <td><input id="1" type="radio" name="rad1" value="1" required></input></td>
+          <td><input id="2" type="radio" name="rad1" value="2" required></input></td>
+          <td><input id="3" type="radio" name="rad1" value="3" required></input></td>
+          <td><input id="4" type="radio" name="rad1" value="4" required></input></td>
+          <td><input id="5" type="radio" name="rad1" value="5" required></input></td>
+          <td>Excellent</td>
+        </tr>
+      </table>
+      <h4>How would you rate the Hands-On Activites in the Sessions ?</h4>
+      <table>
+        <thead>
+          <th></th>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+        </thead>
+        <tr>
+          <td>Bad</td>
+          <td><input id="1" type="radio" name="rad2" value="1" required></input></td>
+          <td><input id="2" type="radio" name="rad2" value="2" required></input></td>
+          <td><input id="3" type="radio" name="rad2" value="3" required></input></td>
+          <td><input id="4" type="radio" name="rad2" value="4" required></input></td>
+          <td><input id="5" type="radio" name="rad2" value="5" required></input></td>
+          <td>Excellent</td>
+        </tr>
+      </table>
+      <h4>How would you rate the pace of the Session ?</h4>
+      <input id="Too fast" type="radio" name="rad3" value="" required>Too fast</input><br><br>
+      <input id="Too slow" type="radio" name="rad3" value="" required>Too slow</input><br><br>
+      <input id="Just Perfect" type="radio" name="rad3" value="" required>Just Perfect</input><br><br>
+      <h4>How was the explanation by the Trainer ?</h4>
+      <table>
+        <thead>
+          <th></th>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+        </thead>
+        <tr>
+          <td>Very Poor</td>
+          <td><input id="1" type="radio" name="rad4" value="1" required></input></td>
+          <td><input id="2" type="radio" name="rad4" value="2" required></input></td>
+          <td><input id="3" type="radio" name="rad4" value="3" required></input></td>
+          <td><input id="4" type="radio" name="rad4" value="4" required></input></td>
+          <td><input id="5" type="radio" name="rad4" value="5" required></input></td>
+          <td>Excellent</td>
+        </tr>
+      </table>
+      <h4>How was the doubt clearing by the Trainer ?</h4>
+      <table>
+        <thead>
+          <th></th>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+        </thead>
+        <tr>
+          <td>Very Poor</td>
+          <td><input id="1" type="radio" name="rad5" value="1" required></input></td>
+          <td><input id="2" type="radio" name="rad5" value="2" required></input></td>
+          <td><input id="3" type="radio" name="rad5" value="3" required></input></td>
+          <td><input id="4" type="radio" name="rad5" value="4" required></input></td>
+          <td><input id="5" type="radio" name="rad5" value="5" required></input></td>
+          <td>Excellent</td>
+        </tr>
+      </table>
+      <h4>Any other feedback/question/comment/suggestions ?</h4>
+      <textarea name="tarea" rows="3" cols="80" placeholder="Your Answer" required></textarea><br><br>
+      <input type="submit" name="submit" value="Submit">
+    </body>
+    </form>
+
+</html>

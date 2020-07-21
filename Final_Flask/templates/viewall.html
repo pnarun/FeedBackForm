@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  {% block head %}
+  <meta charset="utf-8">
+  <title>{% block title %}viewers{% endblock %}</title>
+  <!-- <link rel="stylesheet" href={{url_for('static', filename = 'css/bootstrap.min.css' )}}>
+  <link rel="stylesheet" href={{url_for('static', filename = 'css/index.css' )}}> -->
+  {% endblock %}
+  <style media="screen">
+  a{
+    float: right;
+    padding-bottom:10px;
+  }
+  .btn{
+    width: 10%;
+
+    border: 2px solid black;
+
+    color: black;
+    padding: 5px;
+    font-size: 22px;
+    cursor: pointer;
+    margin: 0;
+    border-radius: 10px;
+  }
+  .btn:hover{
+    font-weight: bold;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    {% block body %}
+    <center>
+    <h2 class = "jumbotron">Data</h2>
+
+    <table class = "table table-bordered table-sm" border="2">
+      <thead class = "thead-light">
+        <tr>
+          <th>ID</th>
+          <th>&nbsp;&nbsp;&nbsp;Name</th>
+          <th>&nbsp;&nbsp;&nbsp;USN</th>
+          <th>&nbsp;&nbsp;&nbsp;Phone Number</th>
+          <th>&nbsp;&nbsp;&nbsp;Email ID</th>
+          <th>&nbsp;&nbsp;&nbsp;College</th>
+          <!--<th>&nbsp;&nbsp;&nbsp;Trainer</th>-->
+          <th>&nbsp;&nbsp;&nbsp;Course</th>
+          <th>&nbsp;&nbsp;&nbsp;Overall_Rate</th>
+          <th>&nbsp;&nbsp;&nbsp;Hands_On</th>
+          <th>&nbsp;&nbsp;&nbsp;Pace</th>
+          <th>&nbsp;&nbsp;&nbsp;Explanation</th>
+          <th>&nbsp;&nbsp;&nbsp;Doubt_clearing</th>
+          <th>&nbsp;&nbsp;&nbsp;Suggestions</th>
+        </tr>
+      </thead>
+
+      {% for data in data %}
+          {% if name1==data.trainer %}
+                <tr>
+                  <td>{{data.id}}</td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;{{data.name}}</td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;{{data.usn}}</td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;{{data.phn_no}}</td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data.email}}</td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;{{data.college}}</td>
+                  <!--<td>&nbsp;&nbsp;&nbsp;&nbsp;{{data.trainer}}</td>-->
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data.course}}</td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data.overall_rate}}</td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data.hands_on}}</td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;{{data.pace}}</td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data.explanation}}</td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data.doubt_clearing}}</td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{data.suggestions}}</td>
+
+                </tr>
+          {% endif %}
+      {% endfor %}
+    </table>
+  </center><br><br><br><br><br><br><br><br><br><br><br>
+     <center><input class="btn" type="button" name="back" onclick="window.location.href ='{{url_for('trainer')}}'" value="Back"></center>
+  </div>
+  <!-- <script src={{url_for('static', filename = 'js/jquery-3.3.1.min.js')}} charset="utf-8"></script>
+  <script src={{url_for('static', filename = 'js/bootstrap.min.js')}} charset="utf-8"></script> -->
+  {% endblock %}
+
+
+
+</body>
+</html>

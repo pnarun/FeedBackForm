@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Link page</title>
+      <!-- <link rel="stylesheet" href={{ url_for('static', filename = 'css/index.css' )}}>-->
+      <link rel="stylesheet" href={{ url_for('static', filename = 'css/bootstrap.min.css') }}>
+      <style media="screen">
+      button{
+        float: center;
+      }
+      .container{
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+      .jumbotron{
+        font-size: 20px
+      }
+      h1{
+        padding-top: 20px;
+        font-size: 40px;
+        text-align: center;
+        padding-bottom: 30px;
+        background-color: rgba(204,204,204,0.5);
+        border-radius: 20px;
+        color: ;
+      }
+      h1:hover{
+
+        color: ;
+        font-weight: bold;
+      }
+      button{
+        font-size: 30px;
+        font-weight:normal;
+        border-radius: 10px;
+        color: white;
+        font-weight: bold;
+         }
+      .wrap{
+    text-align: center;
+      }
+      * {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  font-size: 17px;
+  background-color: #FEF9E7  ;
+}
+
+.container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.container img {
+  vertical-align: middle;
+}
+
+.container .content {
+  position: absolute;
+  bottom: 100px;
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+</style>
+  </head>
+  <body>
+      <div class="container">
+          <h1><b>Click below to go to Feedback page</b></h1>
+      <div class="wrap">
+        <button class="btn btn-success btn-lg" type ="button" onclick="window.location.href ='{{url_for('feedback_form')}}'" >Click Here</button>
+      </div>
+      <br><br><br>
+      <img src="{{url_for('static',filename ='img/star.jpg')}}" alt="star" style="width:100%">
+
+      </div>
+  </html>

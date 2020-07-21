@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+            <meta charset="utf-8">
+        <title>Akshit details</title>
+        <style>
+               a:link, a:visited {
+  background-color: #5be715;
+  color: white;
+  padding: 5px 6px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: greenyellow;
+}
+            div.gallery {
+  margin: 2px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+        body {
+            background-color: paleturquoise;
+            background-size: cover;
+            background-position: center;
+          }
+    h1
+    {
+      outline-color:rgb(19, 21, 143);
+      font-size: 80px;
+    }
+    #trainer {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+#trainer td, #trainer th {
+  border: 3px solid rgb(236, 7, 7);
+  padding: 8px;
+}
+#trainer tr:nth-child(even){background-color: #f2f2f2;}
+
+#trainer tr:hover {background-color: #ddd;}
+
+#trainer th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+    </head>
+    <body>
+            <h1><center><b>Akshit Bio-Data</b></center></h1>
+            <div class="gallery">
+                    <a target="_blank" href="akshit.jpg">
+                      <img src="/static/img/akshit.jpg" alt="Cinque Terre" width="600" height="400">
+                    </a>
+                    <div class="desc"><B>_____Rachure Akshit____</B></div>
+                  </div>
+
+            <table id="trainer">
+
+                    <tr>
+                            <td>Trainer Name :</td>
+                            <td>Akshit</td>
+                          </tr>
+                          <tr>
+                                <td>Trainer ID :</td>
+                                <td>1SK2017AP</td>
+                              </tr>
+                              <tr>
+                                    <td>Trainer Working Experience :</td>
+                                    <td>8 Years</td>
+                                  </tr>
+                                  <tr>
+                                        <td>Date Of Birth :</td>
+                                        <td>2/12/1999</td>
+                                      </tr>
+                                      <tr>
+                                            <td>Expert In  :</td>
+                                            <td>Web Design And Android Development</td>
+                                          </tr>
+                                          <tr>
+                                            <td>Rating :</td>
+                                            <td>{{data[0].Akshit}}</td>
+                                          </tr>
+                                          <tr>
+                                            <td>  :</td>
+                                            <td></td>
+                                          </tr>
+                                          <tr>
+                                            <td> :</td>
+                                            <td></td>
+                                          </tr>
+                                          <tr>
+                                            <td>  :</td>
+                                            <td></td>
+                                          </tr>
+                                          <tr>
+                                            <td>  :</td>
+                                            <td></td>
+                                          </tr>
+                        </table><br> <br>
+                                          <div class="container">
+                                            <center>
+                                            <a href="{{url_for('feedback_form')}}" target="_blank">GoBack</a></center>
+                                          </div>
+    </body>
+</html>
